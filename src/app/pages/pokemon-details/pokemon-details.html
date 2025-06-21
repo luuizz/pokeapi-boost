@@ -1,1 +1,30 @@
-<h1>Pokemon: {{pokemonName}}</h1>
+<section>
+  <app-container>
+    @if (pokemonDetail) {
+    <h1>Detalhes do Pokemon: <div style="text-transform: capitalize;">{{pokemonDetail.name}}</div>
+    </h1>
+    <pre>ID: {{pokemonDetail.id}}</pre>
+    <p>Peso: {{pokemonDetail.height}}</p>
+    <p>Altura: {{pokemonDetail.weight}}</p>
+    <div>
+      <h3>Tipos</h3>
+      <ul>
+        @for (pokemon of pokemonDetail.types; track $index) {
+        <li>{{pokemon.type.name}}</li>
+        }
+      </ul>
+    </div>
+    <div>
+      <h3>Habilidades</h3>
+      <ul>
+        @for (pokemon of pokemonDetail.abilities; track $index) {
+        <li>{{pokemon.ability.name}}</li>
+        }
+      </ul>
+    </div>
+
+    } @else {
+    <p>Carregando...</p>
+    }
+  </app-container>
+</section>

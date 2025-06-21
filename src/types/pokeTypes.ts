@@ -8,5 +8,11 @@ export interface PokemonListResponse {
 export interface PokemonDetail {
   name: string;
   id: number;
-  types: { type: { name: string } }[];
+  types: {
+    slot: number;
+    type: { name: string };
+  }[];
+  abilities: { ability: { name: string } }[];
+  weight: number;
+  height: number;
 }

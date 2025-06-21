@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { PokemonListResponse } from '../../types/pokeTypes';
+import { PokemonDetail, PokemonListResponse } from '../../types/pokeTypes';
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +16,9 @@ export class Pokemon {
     return this.http.get<PokemonListResponse>(
       `${this.apiUrl}/pokemon?limit=${limit}`
     );
+  }
+
+  getPokemonByName(name: string): Observable<PokemonDetail> {
+    return this.http.get<PokemonDetail>(`${this.apiUrl}/pokemon/${name}`);
   }
 }
