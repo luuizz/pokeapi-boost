@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Container } from '../../components/container/container';
 import { PokemonDetail } from '../../../types/pokeTypes';
 import { Pokemon } from '../../services/pokemon';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-pokemon-details',
-  imports: [Container, CommonModule],
+  imports: [Container, CommonModule, NgOptimizedImage],
   templateUrl: './pokemon-details.html',
   styleUrl: './pokemon-details.scss',
 })

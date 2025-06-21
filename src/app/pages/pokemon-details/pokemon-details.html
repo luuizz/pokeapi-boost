@@ -1,6 +1,7 @@
 <section>
   <app-container>
     @if (pokemonDetail) {
+    <img [ngSrc]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + pokemonDetail.id + '.svg'" [alt]="pokemonDetail.name" loading="lazy" width="200" height="200">
     <h1>Detalhes do Pokemon: <div style="text-transform: capitalize;">{{pokemonDetail.name}}</div>
     </h1>
     <pre>ID: {{pokemonDetail.id}}</pre>

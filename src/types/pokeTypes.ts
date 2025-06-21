@@ -15,4 +15,11 @@ export interface PokemonDetail {
   abilities: { ability: { name: string } }[];
   weight: number;
   height: number;
+  sprites: {
+    other: {
+      dream_world: {
+        front_default: string;
+      };
+    };
+  };
 }
