@@ -1,14 +1,20 @@
-<h1>Lista de Pokemons</h1>
+<section>
+  <app-container>
+    <h1>Lista de Pokemons</h1>
 
-<ul>
-  @for (pokemon of pokemons; track $index) {
-  <li>
-    <span>
-      {{pokemon.name}}
-    </span>
-    <a [routerLink]="['/pokemon', pokemon.name]">
-      Meu link
-    </a>
-  </li>
-  }
-</ul>
+    <ul>
+      @for (pokemon of pokemons; track $index) {
+      <li>
+        <span>
+          {{pokemon.name}}
+        </span>
+        <a [routerLink]="['/pokemon', pokemon.name]">
+          Detalhes
+        </a>
+      </li>
+      }
+    </ul>
+
+    <button (click)="showMorePokemons()">Ver mais</button>
+  </app-container>
+</section>
